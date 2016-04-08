@@ -10,6 +10,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class HeroCollider : MonoBehaviour {
 
@@ -54,9 +55,9 @@ public class HeroCollider : MonoBehaviour {
 		// collision with finish object
 		if (other.gameObject.CompareTag ("Finish")) {
 			this._finishGameSound.Play ();
-			this.gameController.WinLabel.gameObject.SetActive (true);
-			this.gameController.RestartButton.gameObject.SetActive (true);
-
+		//	this.gameController.WinLabel.gameObject.SetActive (true);
+		//	this.gameController.RestartButton.gameObject.SetActive (true);
+			SceneManager.LoadScene ("Level2");
 		}
 	}
 
