@@ -13,7 +13,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameControllerStart : MonoBehaviour {
+public class GameControllerEnd : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -26,21 +26,11 @@ public class GameControllerStart : MonoBehaviour {
 	}
 
 	// start new game after start button being clicked
-	public void LoadGame () {
+	public void LoadGameEndMenu () {
 		SceneManager.LoadScene ("Main");
 	}
 
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
-
-    public void GameInstructions()
-    {
-        SceneManager.LoadScene("InstructionScene");
-    }
-
-    public void GameHome()
+    public void GameHomeEndMenu()
     {
         SceneManager.LoadScene("StartScene");
     }

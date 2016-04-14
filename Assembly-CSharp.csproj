@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8726EAA3-98E5-417D-5C22-7B61998B33A9}</ProjectGuid>
+    <ProjectGuid>{7EDC09F1-3196-1151-FBF7-6FC49D805894}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -50,6 +50,7 @@
      <Compile Include="Assets\_Scripts\DiamondController.cs" />
      <Compile Include="Assets\_Scripts\DiamondControllerLevel2.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
+     <Compile Include="Assets\_Scripts\GameControllerEnd.cs" />
      <Compile Include="Assets\_Scripts\GameControllerLevel2.cs" />
      <Compile Include="Assets\_Scripts\GameControllerStart.cs" />
      <Compile Include="Assets\_Scripts\HeroCollider.cs" />

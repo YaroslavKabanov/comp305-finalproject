@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraControllerLevel2 : MonoBehaviour {
 
 	// PUBLIC INSTANCE VARIABLES
-	public float speed = 1f;
+	public float speed = 1.5f;
 	public Vector3 offset;
 
 	// PRIVATE INSTANCE VARIABLE 
@@ -26,7 +26,7 @@ public class CameraControllerLevel2 : MonoBehaviour {
 		this._transform.position = this._currentPosition; 
 
 
-		if (this._currentPosition.y >= 4200) {
+		if (this._currentPosition.y >= 4500) {
 			speed = 0; 
 		}
 	}
