@@ -1,4 +1,15 @@
-﻿using UnityEngine;
+﻿// *************************************************************
+// * Source file : GameraControllerLevel2.cs                   *
+// * Author name : Yaroslav Kabanov & Bridgiet Dhivya Joseph   *
+// * Last Modified by : Yaroslav Kabanov                       *
+// * Last Date Modified : April 17th , 2016                    *
+// * Program Description : 2D Ninja platformer, contains 3     *
+// * different levels.                                         *
+// * Version: 1.0                                              *
+// *************************************************************    
+// Git Rero: https://github.com/YaroslavKabanov/comp305-finalproject.git
+
+using UnityEngine;
 using System.Collections;
 
 public class CameraControllerLevel2 : MonoBehaviour {
