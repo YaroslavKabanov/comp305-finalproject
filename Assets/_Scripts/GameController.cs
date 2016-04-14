@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour {
 			this._liveValue = value;
 
 			if (this._liveValue <= 0) {
+				
 				this._endGame ();
 			} else {
 				this.LivesLabel.text = "Lives : " + this._liveValue;
@@ -83,18 +84,18 @@ public class GameController : MonoBehaviour {
 		this.WinLabel.gameObject.SetActive (false);
 		this.ScoreLabel.gameObject.SetActive (true);
 		this.LivesLabel.gameObject.SetActive (true);
-
-
 	}
 
 	// end game methods 
 	private void _endGame () {
+		
 		this.HighScoreLabel.text = "High Score: " + this._scoreValue;
 		this.GameOverLabel.gameObject.SetActive (true);
 		this.HighScoreLabel.gameObject.SetActive (true);
 		this.RestartButton.gameObject.SetActive (true);
 		this.ScoreLabel.gameObject.SetActive (false);
 		this.LivesLabel.gameObject.SetActive (false);
+
 
 
 

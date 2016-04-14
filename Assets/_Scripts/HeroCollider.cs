@@ -59,7 +59,12 @@ public class HeroCollider : MonoBehaviour {
 		//	this.gameController.RestartButton.gameObject.SetActive (true);
 			SceneManager.LoadScene ("Level2");
 		}
+
+		if(other.gameObject.CompareTag("FinishLevel2")) {
+			this._finishGameSound.Play ();
+			SceneManager.LoadScene ("Level3");
 	}
 
 
+	}
 }

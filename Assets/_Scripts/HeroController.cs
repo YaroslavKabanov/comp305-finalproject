@@ -101,7 +101,7 @@ public class HeroController : MonoBehaviour {
 
 
 		// check if player is grounded and then he can move
-		if (this._isGrounded) {
+		if (this._isGrounded) {	
 			// get a number betwee -1 to 1 for Hor and Vert axes
 			this._move = Input.GetAxis ("Horizontal");
 			this._jump = Input.GetAxis ("Vertical");
@@ -126,6 +126,7 @@ public class HeroController : MonoBehaviour {
 
 				this._animator.SetInteger ("Anim_State", 1);
 			} else {
+				
 				this._animator.SetInteger ("Anim_State", 0);
 			}
 
@@ -138,11 +139,15 @@ public class HeroController : MonoBehaviour {
 					this._isGrounded = false; 
 					this._jumpSound.Play ();
 				}
+			
 			}
+
 
 		} else {
 			// jump clip
 		this._animator.SetInteger ("Anim_State", 2);
+
+
 		}
 
 

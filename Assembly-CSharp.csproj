@@ -46,11 +46,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Scripts\CameraController.cs" />
+     <Compile Include="Assets\_Scripts\CameraControllerLevel2.cs" />
      <Compile Include="Assets\_Scripts\DiamondController.cs" />
+     <Compile Include="Assets\_Scripts\DiamondControllerLevel2.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
+     <Compile Include="Assets\_Scripts\GameControllerLevel2.cs" />
      <Compile Include="Assets\_Scripts\GameControllerStart.cs" />
      <Compile Include="Assets\_Scripts\HeroCollider.cs" />
      <Compile Include="Assets\_Scripts\HeroController.cs" />
+     <Compile Include="Assets\_Scripts\HeroControllerLevel2.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
