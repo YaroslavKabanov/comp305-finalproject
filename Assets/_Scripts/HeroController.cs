@@ -32,12 +32,13 @@ public class HeroController : MonoBehaviour {
 	public float jumpForce;
 	public Transform groundCheck;
 	public GameController gameController;
+    public GameObject kunai;
+    public bool facialRight;
 
-	// private variables 
-	private Animator _animator;
+    // private variables 
+    private Animator _animator;
 	private float _move = 0f;
 	private float _jump = 0f;
-	private bool _facialRight;
 	private Transform _transform;
 	private Rigidbody2D _rigidBody2D;
 	private bool _isGrounded;
@@ -52,7 +53,6 @@ public class HeroController : MonoBehaviour {
 	void Start () {
 		// initialize public variables
 		this.velocityRange = new VelocityRange (300f,30000f);
-
 		this.moveForce = 1000f;
 		this.jumpForce = 42000f;
 
@@ -64,7 +64,7 @@ public class HeroController : MonoBehaviour {
 		this._move = 0f;
 		this._jump = 0f;
 		this._animator.SetInteger ("Anim_State", 0);
-		this._facialRight = true;
+		this.facialRight = true;
 
 		this._audioSources = gameObject.GetComponents<AudioSource> ();
 		this._jumpSound = this._audioSources [0];
@@ -112,7 +112,7 @@ public class HeroController : MonoBehaviour {
 					if (absVelX < this.velocityRange.max) {
 						forceX = this.moveForce;
 					}
-					this._facialRight = true;
+					this.facialRight = true;
 					this._flip ();
 				}
 				if (this._move < 0) {
@@ -120,39 +120,66 @@ public class HeroController : MonoBehaviour {
 					if (absVelX < this.velocityRange.max) {
 						forceX = -this.moveForce;
 					}
-					this._facialRight = false;
+					this.facialRight = false;
 					this._flip ();
 				}
 
 				this._animator.SetInteger ("Anim_State", 1);
-			} else {
-				this._animator.SetInteger ("Anim_State", 0);
+			}
+            else
+            {
+                 this._animator.SetInteger("Anim_State", 0);
 			}
 
 
 			if (this._jump > 0) {
-				// jump clip
-				this._animator.SetInteger ("Anim_State", 2);
 				if (absVelY < this.velocityRange.max) {
 					forceY = this.jumpForce;
 					this._isGrounded = false; 
 					this._jumpSound.Play ();
-				}
-			}
-
-		} else {
+                }
+                else
+                {
+                    // jump clip
+                    this._animator.SetInteger("Anim_State", 2);
+                }
+            }           
+        }
+        else
+        {
 			// jump clip
-		this._animator.SetInteger ("Anim_State", 2);
+		    this._animator.SetInteger ("Anim_State", 2);
 		}
 
+        if (Input.GetKeyDown("space"))
+        {
+            //Fire Kunai
+            if(_jump > 0)
+            {
+                this._animator.SetInteger("Anim_State", 5);
+            }
+            else
+            {
+                this._animator.SetInteger("Anim_State", 4);
+            }
+            GameObject kunaiObj = Instantiate(kunai, this._transform.position, this._transform.rotation) as GameObject;
+            if (facialRight)
+            {
+                kunaiObj.GetComponent<HeroKunaiController>().FaceRightDir = true;
+            }
+            else if (!facialRight)
+            {
+                kunaiObj.GetComponent<HeroKunaiController>().FaceRightDir = false;
+            }
+        } 
 
-		// apply forces to the player
-		this._rigidBody2D.AddForce (new Vector2 (forceX, forceY));
+        // apply forces to the player
+        this._rigidBody2D.AddForce (new Vector2 (forceX, forceY));
 	}
 		
 	// flip player when controlls used
 	private void _flip() {
-		if(this._facialRight) {
+		if(this.facialRight) {
 			this._transform.localScale = new Vector2 (1, 1);
 		} else {
 			this._transform.localScale = new Vector2 (-1, 1);
