@@ -46,11 +46,11 @@ public class HeroCollider : MonoBehaviour {
 		}
 
 		//enemy collision 
-
-		if (other.gameObject.CompareTag ("Enemy")) {
+		if (other.gameObject.CompareTag ("Enemy") || other.gameObject.CompareTag("EnemyKunai")) {
 			this.gameController.LivesValue -= 1;
 			this._hitCactusSound.Play ();
 		}
+
 		// collision with finish object
 		if (other.gameObject.CompareTag ("Finish")) {
 			this._finishGameSound.Play ();

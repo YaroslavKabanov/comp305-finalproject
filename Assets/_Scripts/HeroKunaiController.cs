@@ -37,15 +37,24 @@ public class HeroKunaiController : MonoBehaviour {
             _transform.Translate(Vector3.right * amtToMove);
         }
 
-        //if (!this.faceRight && this._transform.position.x < -1000f)
-        //{
-        //    Destroy(gameObject);
-        //}
-        //else if (this.faceRight && this._transform.position.x < -5000f)
-        //{
-        //    Destroy(gameObject);
-        //}
-    } 
+        if ((!this.faceRight && this._transform.position.x < -1000f) || (this.faceRight && this._transform.position.x > 5000f))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+
+        if(other.gameObject.CompareTag("Diamond"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }
 
 

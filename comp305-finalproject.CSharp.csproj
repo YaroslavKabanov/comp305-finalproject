@@ -67,14 +67,14 @@
   <ItemGroup>
     <Compile Include="Assets\_Scripts\CameraController.cs" />
     <Compile Include="Assets\_Scripts\DiamondController.cs" />
-    <Compile Include="Assets\_Scripts\EnemyCollider.cs" />
     <Compile Include="Assets\_Scripts\EnemyController.cs" />
+    <Compile Include="Assets\_Scripts\EnemyKunaiController.cs" />
     <Compile Include="Assets\_Scripts\GameController.cs" />
     <Compile Include="Assets\_Scripts\GameControllerStart.cs" />
     <Compile Include="Assets\_Scripts\HeroCollider.cs" />
     <Compile Include="Assets\_Scripts\HeroController.cs" />
-    <Compile Include="Assets\_Scripts\EnemyKunaiController.cs" />
     <Compile Include="Assets\_Scripts\HeroKunaiController.cs" />
+    <Compile Include="Assets\_Scripts\KunaiCollider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

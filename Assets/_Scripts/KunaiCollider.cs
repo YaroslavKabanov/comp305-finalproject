@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyCollider : MonoBehaviour {
+public class KunaiCollider : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

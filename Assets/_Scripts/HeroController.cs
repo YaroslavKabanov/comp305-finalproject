@@ -162,7 +162,10 @@ public class HeroController : MonoBehaviour {
             {
                 this._animator.SetInteger("Anim_State", 4);
             }
-            GameObject kunaiObj = Instantiate(kunai, this._transform.position, this._transform.rotation) as GameObject;
+            Vector3 _kunaiPosition = this._transform.position;
+            _kunaiPosition.x = this._transform.position.x + 15f;
+            _kunaiPosition.y = this._transform.position.y + -10f;
+            GameObject kunaiObj = Instantiate(kunai, _kunaiPosition, Quaternion.identity) as GameObject;
             if (facialRight)
             {
                 kunaiObj.GetComponent<HeroKunaiController>().FaceRightDir = true;
